@@ -1,0 +1,5 @@
+dist/*
+build/*
+src/*
+!src/readme.txt
+

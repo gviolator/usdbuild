@@ -1,4 +1,5 @@
 set CURRENT_DIR=%~dp0
+
 set BUILD_CONFIG=debug
 set SRC_DIR=%CURRENT_DIR%..\src
 set DIST_DIR=%CURRENT_DIR%..\dist
@@ -8,6 +9,11 @@ set TBB_DIST_DIR=%DIST_DIR%\%TBB_DIR_NAME%
 call %CURRENT_DIR%env_vc.cmd 17
 
 msbuild %SRC_DIR%\intel-tbb\build\vs2013\tbb.vcxproj -p:Configuration=%BUILD_CONFIG% -p:Platform=x64 /p:PlatformToolset=v143
+
+@if not exist "%DIST_DIR%" (
+	cd %CURRENT_DIR%..
+	mkdir dist
+)
 
 @if not exist "%TBB_DIST_DIR%" (
 	cd %DIST_DIR%

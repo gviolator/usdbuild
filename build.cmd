@@ -1,6 +1,12 @@
 pip install PySide6 PyOpenGL Jinja2 Argparse
 
 set DIR=%~dp0build-scripts
+set DIST_DIR=%~dp0\dist
+@if not exist "%DIST_DIR%" (
+	echo Create 'dist' directory
+	cd %~dp0
+	mkdir dist
+)
 
 cd %DIR%
 
