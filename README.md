@@ -52,3 +52,16 @@ This will build all dependency libraries and OpenUSD. All libs will be installed
 * .dist\opensubdiv-debug
 * .dist\opensusd-debug
 * .dist\tbb-debug
+
+## After build
+
+Run:
+
+```cmd
+.\run-usdview.cmd
+```
+
+to start Usd View application (to check that something is working).
+
+## Add OpenUSD library to project
+...
